@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Champiñón League — Inicio</title>
-<meta name="description" content="Champiñón League: la liga de fútbol amistoso entre amigos. Jornadas, MVPs, mejores jugadas y el Balón de Oro de cada temporada.">
+<meta name="description" content="Champiñón League: la liga de fútbol amistoso entre amigos. Noticias, clasificación de MVPs, highlights de cada jornada y el Balón de Oro de cada temporada.">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
     </button>
     <div class="enlaces" id="enlaces">
       <a href="index.html" class="activo">Inicio</a>
-      <a href="index.html#jornadas">Jornadas</a>
+      <a href="jornadas.html">Jornadas</a>
       <a href="clasificacion.html">Clasificación</a>
       <a href="balon-de-oro.html">Balón de Oro</a>
     </div>
@@ -45,108 +45,127 @@
   </div>
 </section>
 
-<section id="jornadas">
+<section>
   <div class="contenedor">
     <div class="titulo-seccion">
       <div>
-        <span class="eyebrow">Última hora</span>
-        <h2>Jornadas de la temporada</h2>
+        <span class="eyebrow">Portada</span>
+        <h2>Últimas noticias</h2>
       </div>
-      <p>Resumen de cada jornada: goles, regates, la patada del día y el MVP que se llevó los focos.</p>
+      <p>Lo último de la liga: MVPs, previas de jornada y los highlights recién subidos.</p>
     </div>
 
-    <div class="jornadas-grid">
+    <div class="portada-layout">
 
-      <div class="jornada-card">
-        <span class="jornada-numero">⚽ Jornada 3</span>
-        <h3>Noche de barro</h3>
-        <p class="jornada-fecha">Próximamente — pendiente de jugar</p>
-        <div class="jornada-destacados">
-          <div class="destacado-item">
-            <span class="emoji">🥅</span>
-            <span class="etiqueta">Máx. goleador</span>
-            <span class="valor">Por decidir</span>
+      <div class="noticias-col">
+
+        <a href="jornadas.html" class="noticia-card destacada">
+          <div class="noticia-img">
+            <span class="noticia-tag oro">MVP</span>
+            🏆
           </div>
-          <div class="destacado-item">
-            <span class="emoji">🌀</span>
-            <span class="etiqueta">Mejor regate</span>
-            <span class="valor">Por decidir</span>
+          <div class="noticia-body">
+            <div class="noticia-fecha">Jornada 2</div>
+            <h3>Jugador 2 se corona MVP tras un doblete y una asistencia</h3>
+            <p>Una exhibición en la segunda mitad decantó la jornada. Repasa los goles y el regate que le valieron el galardón.</p>
           </div>
-          <div class="destacado-item">
-            <span class="emoji">🦵</span>
-            <span class="etiqueta">Patada del día</span>
-            <span class="valor">Por decidir</span>
-          </div>
+        </a>
+
+        <div class="noticias-grid-secundarias">
+          <a href="jornadas.html" class="noticia-card">
+            <div class="noticia-img">
+              <span class="noticia-tag">Vídeo</span>
+              🎬
+            </div>
+            <div class="noticia-body">
+              <div class="noticia-fecha">Jornada 1</div>
+              <h3>Ya disponibles los highlights del estreno de temporada</h3>
+              <p>Goles, regates y la patada que dio para hablar toda la semana.</p>
+            </div>
+          </a>
+
+          <a href="clasificacion.html" class="noticia-card">
+            <div class="noticia-img">
+              <span class="noticia-tag">Clasificación</span>
+              📊
+            </div>
+            <div class="noticia-body">
+              <div class="noticia-fecha">Temporada 1</div>
+              <h3>Así está la pelea por el Balón de Oro tras dos jornadas</h3>
+              <p>Jugador 2 y Jugador 3 empatados a MVPs en lo más alto de la tabla.</p>
+            </div>
+          </a>
+
+          <a href="jornadas.html" class="noticia-card">
+            <div class="noticia-img">
+              <span class="noticia-tag">Previa</span>
+              📅
+            </div>
+            <div class="noticia-body">
+              <div class="noticia-fecha">Jornada 3</div>
+              <h3>Todo listo para la próxima jornada: se juega este finde</h3>
+              <p>Cámara cargada y equipos por confirmar. Aquí subiremos el resumen en cuanto se pite el final.</p>
+            </div>
+          </a>
         </div>
-        <a href="#" class="jornada-video">▶ Vídeo pendiente</a>
+
       </div>
 
-      <div class="jornada-card">
-        <span class="jornada-numero">⚽ Jornada 2</span>
-        <h3>La remontada</h3>
-        <p class="jornada-fecha">Ejemplo — sustituir por datos reales</p>
-        <div class="jornada-destacados">
-          <div class="destacado-item">
-            <span class="emoji">🥅</span>
-            <span class="etiqueta">Máx. goleador</span>
-            <span class="valor">Jugador 2 (3 goles)</span>
+      <aside class="sidebar-col">
+        <div class="widget">
+          <div class="widget-titulo">
+            <div>
+              <span class="eyebrow">Temporada 1</span>
+              <h3>Clasificación MVPs</h3>
+            </div>
           </div>
-          <div class="destacado-item">
-            <span class="emoji">🌀</span>
-            <span class="etiqueta">Mejor regate</span>
-            <span class="valor">Jugador 5</span>
+          <div class="mini-tabla">
+            <div class="mini-fila lider">
+              <span class="mini-pos">1</span>
+              <span class="avatar">J2</span>
+              <span class="mini-nombre">Jugador 2</span>
+              <span class="mini-mvp">1 MVP</span>
+            </div>
+            <div class="mini-fila">
+              <span class="mini-pos">2</span>
+              <span class="avatar">J3</span>
+              <span class="mini-nombre">Jugador 3</span>
+              <span class="mini-mvp">1 MVP</span>
+            </div>
+            <div class="mini-fila">
+              <span class="mini-pos">3</span>
+              <span class="avatar">J1</span>
+              <span class="mini-nombre">Jugador 1</span>
+              <span class="mini-mvp">0 MVP</span>
+            </div>
+            <div class="mini-fila">
+              <span class="mini-pos">4</span>
+              <span class="avatar">J5</span>
+              <span class="mini-nombre">Jugador 5</span>
+              <span class="mini-mvp">0 MVP</span>
+            </div>
+            <div class="mini-fila">
+              <span class="mini-pos">5</span>
+              <span class="avatar">J4</span>
+              <span class="mini-nombre">Jugador 4</span>
+              <span class="mini-mvp">0 MVP</span>
+            </div>
           </div>
-          <div class="destacado-item">
-            <span class="emoji">🦵</span>
-            <span class="etiqueta">Patada del día</span>
-            <span class="valor">Jugador 1 → Jugador 4</span>
-          </div>
+          <a href="clasificacion.html" class="widget-link">Ver clasificación completa</a>
         </div>
-        <div class="mvp-banner">
-          <span class="trofeo">🏆</span>
-          <div class="texto">
-            <small>MVP de la jornada</small>
-            <strong>Jugador 2</strong>
-          </div>
-        </div>
-        <a href="#" class="jornada-video">▶ Ver mejores jugadas</a>
-      </div>
 
-      <div class="jornada-card">
-        <span class="jornada-numero">⚽ Jornada 1</span>
-        <h3>El estreno</h3>
-        <p class="jornada-fecha">Ejemplo — sustituir por datos reales</p>
-        <div class="jornada-destacados">
-          <div class="destacado-item">
-            <span class="emoji">🥅</span>
-            <span class="etiqueta">Máx. goleador</span>
-            <span class="valor">Jugador 3 (4 goles)</span>
+        <div class="widget widget-proxima">
+          <div class="widget-titulo">
+            <div>
+              <span class="eyebrow">Próximamente</span>
+              <h3>Siguiente jornada</h3>
+            </div>
           </div>
-          <div class="destacado-item">
-            <span class="emoji">🌀</span>
-            <span class="etiqueta">Mejor regate</span>
-            <span class="valor">Jugador 1</span>
-          </div>
-          <div class="destacado-item">
-            <span class="emoji">🦵</span>
-            <span class="etiqueta">Patada del día</span>
-            <span class="valor">Jugador 6 → Jugador 3</span>
-          </div>
+          <div class="proxima-titulo">⚽ Jornada 3</div>
+          <p>Aún sin fecha confirmada. En cuanto se juegue, aquí tendrás el resumen y el vídeo con lo mejor del partido.</p>
         </div>
-        <div class="mvp-banner">
-          <span class="trofeo">🏆</span>
-          <div class="texto">
-            <small>MVP de la jornada</small>
-            <strong>Jugador 3</strong>
-          </div>
-        </div>
-        <a href="#" class="jornada-video">▶ Ver mejores jugadas</a>
-      </div>
+      </aside>
 
-    </div>
-
-    <div class="ver-mas-wrap">
-      <a href="clasificacion.html" class="boton oro">Ver clasificación de la temporada 🏆</a>
     </div>
   </div>
 </section>
@@ -194,8 +213,8 @@
 <section class="cta">
   <div class="contenedor">
     <h2>🍄 Nadie es profesional, todos jugamos por la gloria</h2>
-    <p>Sigue la clasificación en directo y descubre quién va camino del Balón de Oro de esta temporada.</p>
-    <a href="clasificacion.html" class="boton">Ver clasificación</a>
+    <p>Revisa los highlights de cada jornada y descubre quién va camino del Balón de Oro de esta temporada.</p>
+    <a href="jornadas.html" class="boton">Ver highlights de jornadas</a>
   </div>
 </section>
 
