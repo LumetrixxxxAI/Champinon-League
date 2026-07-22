@@ -7,6 +7,7 @@
   --verde-oscuro: #060a24;      /* fondo profundo / texto sobre acentos claros */
   --verde-neon: #3f66ff;        /* azul UCL brillante, acento principal */
   --violeta-ucl: #5b2a86;
+  --magenta-ucl: #ff2fc0;       /* toque magenta tipo starball UEFA */
   --oro: #d4af37;
   --oro-claro: #f3d675;
   --negro: #05070f;
@@ -116,7 +117,7 @@ a {
 }
 
 .marca .liga {
-  background: linear-gradient(90deg, var(--verde-neon), var(--violeta-ucl));
+  background: linear-gradient(90deg, var(--verde-neon), var(--violeta-ucl), var(--magenta-ucl));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -164,11 +165,13 @@ a {
 
 /* ---------- Hero ---------- */
 
-.hero {
+.hero,
+.balon-hero {
   position: relative;
   padding: 90px 24px 70px;
   text-align: center;
   overflow: hidden;
+  isolation: isolate;
 }
 
 .hero::after {
@@ -179,6 +182,33 @@ a {
   right: 0;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(63, 102, 255, 0.5), transparent);
+}
+
+/* Resplandor tipo "starball" de la Champions detrás de cada hero */
+.hero-glow {
+  position: absolute;
+  inset: -30%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 25%, transparent 0%, rgba(5, 7, 15, 0.4) 55%, var(--negro) 88%),
+    conic-gradient(
+      from 200deg at 50% 30%,
+      rgba(63, 102, 255, 0.6) 0deg,
+      rgba(91, 42, 134, 0.55) 70deg,
+      rgba(255, 47, 192, 0.5) 130deg,
+      transparent 180deg,
+      rgba(91, 42, 134, 0.5) 230deg,
+      rgba(255, 47, 192, 0.45) 290deg,
+      rgba(63, 102, 255, 0.6) 360deg
+    );
+  filter: blur(80px) saturate(1.35);
+  animation: girar-glow 22s linear infinite;
+}
+
+@keyframes girar-glow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .hero-emoji {
@@ -197,7 +227,7 @@ a {
 }
 
 .hero h1 .destacado {
-  background: linear-gradient(90deg, var(--verde-neon), var(--violeta-ucl));
+  background: linear-gradient(90deg, var(--verde-neon), var(--violeta-ucl), var(--magenta-ucl));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -674,7 +704,7 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(90deg, var(--verde-neon), var(--violeta-ucl));
+  background: linear-gradient(90deg, var(--verde-neon), var(--violeta-ucl), var(--magenta-ucl));
   color: var(--blanco);
   font-weight: 800;
   text-transform: uppercase;
