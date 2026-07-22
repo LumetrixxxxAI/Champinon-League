@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Champiñón League — Clasificación</title>
+<meta name="description" content="Clasificación de la temporada actual de la Champiñón League: MVPs acumulados y quién lidera la carrera por el Balón de Oro.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="cabecera">
+  <nav class="nav">
+    <a href="index.html" class="marca">
+      <span class="icono">🍄</span>
+      <span>Champiñón <span class="liga">League</span></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="enlaces" id="enlaces">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#jornadas">Jornadas</a>
+      <a href="clasificacion.html" class="activo">Clasificación</a>
+      <a href="balon-de-oro.html">Balón de Oro</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero" style="padding-bottom:40px;">
+  <div class="contenedor">
+    <div class="hero-emoji">📊</div>
+    <h1>Clasificación de la <span class="destacado">Temporada 1</span></h1>
+    <p class="subtitulo">
+      Cada MVP de jornada suma un punto para la carrera del Balón de Oro.
+      Así va la tabla ahora mismo — datos de ejemplo, actualízalos jornada a jornada.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="contenedor">
+    <div class="titulo-seccion">
+      <div>
+        <span class="eyebrow">Temporada 1 · Jornada 3 de 15</span>
+        <h2>Tabla de MVPs</h2>
+      </div>
+      <p>El líder al cierre de la jornada 15 se lleva el Balón de Oro de la temporada.</p>
+    </div>
+
+    <div class="tabla-wrap">
+      <table class="clasificacion">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Jugador</th>
+            <th>MVPs</th>
+            <th>Jornadas jugadas</th>
+            <th>Goles totales</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="lider">
+            <td class="pos top1">1</td>
+            <td>
+              <div class="jugador-cell">
+                <span class="avatar">J2</span>
+                Jugador 2
+                <span class="badge-lider">🏆 Líder</span>
+              </div>
+            </td>
+            <td class="mvp-count">1</td>
+            <td>2</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td class="pos">2</td>
+            <td>
+              <div class="jugador-cell">
+                <span class="avatar">J3</span>
+                Jugador 3
+              </div>
+            </td>
+            <td class="mvp-count">1</td>
+            <td>2</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td class="pos">3</td>
+            <td>
+              <div class="jugador-cell">
+                <span class="avatar">J1</span>
+                Jugador 1
+              </div>
+            </td>
+            <td class="mvp-count">0</td>
+            <td>2</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td class="pos">4</td>
+            <td>
+              <div class="jugador-cell">
+                <span class="avatar">J5</span>
+                Jugador 5
+              </div>
+            </td>
+            <td class="mvp-count">0</td>
+            <td>2</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td class="pos">5</td>
+            <td>
+              <div class="jugador-cell">
+                <span class="avatar">J4</span>
+                Jugador 4
+              </div>
+            </td>
+            <td class="mvp-count">0</td>
+            <td>2</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td class="pos">6</td>
+            <td>
+              <div class="jugador-cell">
+                <span class="avatar">J6</span>
+                Jugador 6
+              </div>
+            </td>
+            <td class="mvp-count">0</td>
+            <td>2</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="leyenda">
+      <span>🏆 Líder de la temporada</span>
+      <span>MVPs = veces elegido MVP de la jornada</span>
+      <span>Datos de ejemplo — sustituir por los reales</span>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="contenedor">
+    <h2>🍄 Faltan 12 jornadas para el Balón de Oro</h2>
+    <p>Todo puede pasar todavía. Revisa el palmarés de temporadas anteriores.</p>
+    <a href="balon-de-oro.html" class="boton oro">Ver Balón de Oro</a>
+  </div>
+</section>
+
+<footer>
+  <div class="contenedor">
+    <div class="foot-marca">🍄 Champiñón League</div>
+    <div>La liga de fútbol entre amigos. Solo por diversión.</div>
+    <div class="foot-social">
+      <a href="#" aria-label="Instagram">📷</a>
+      <a href="#" aria-label="TikTok">🎵</a>
+      <a href="#" aria-label="YouTube">▶️</a>
+    </div>
+    <div>© 2026 Champiñón League</div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const enlaces = document.getElementById('enlaces');
+  toggle.addEventListener('click', () => enlaces.classList.toggle('abierto'));
+</script>
+
+</body>
+</html>

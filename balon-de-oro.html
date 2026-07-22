@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Champiñón League — Balón de Oro</title>
+<meta name="description" content="Palmarés del Balón de Oro de la Champiñón League: quién ha ganado cada temporada y quién va camino de ganar la actual.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="cabecera">
+  <nav class="nav">
+    <a href="index.html" class="marca">
+      <span class="icono">🍄</span>
+      <span>Champiñón <span class="liga">League</span></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="enlaces" id="enlaces">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#jornadas">Jornadas</a>
+      <a href="clasificacion.html">Clasificación</a>
+      <a href="balon-de-oro.html" class="activo">Balón de Oro</a>
+    </div>
+  </nav>
+</header>
+
+<section class="balon-hero">
+  <div class="contenedor">
+    <div class="emoji-grande">🏆</div>
+    <h1>El <span class="destacado" style="color:var(--oro)">Balón de Oro</span> de la Champiñón League</h1>
+    <p class="subtitulo" style="margin-top:14px;">
+      Cada temporada tiene 15 jornadas. El jugador con más MVPs al final se
+      lleva el Balón de Oro y entra en el palmarés para siempre.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="contenedor">
+    <div class="titulo-seccion" style="justify-content:center; text-align:center; flex-direction:column; align-items:center;">
+      <span class="eyebrow">En juego ahora mismo</span>
+      <h2>Temporada 1</h2>
+    </div>
+
+    <div class="temporada-actual-card">
+      <span class="eyebrow">Jornada 3 de 15</span>
+      <h3>🥇 Va en cabeza: Jugador 2</h3>
+      <p>1 MVP conseguido — todavía queda toda la temporada por jugar.</p>
+      <div class="progreso-barra">
+        <div class="relleno" style="width:20%;"></div>
+      </div>
+      <div class="progreso-texto">3 de 15 jornadas jugadas</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="contenedor">
+    <div class="titulo-seccion">
+      <div>
+        <span class="eyebrow">Palmarés</span>
+        <h2>Historial de temporadas</h2>
+      </div>
+      <p>Aquí quedará escrita la leyenda de cada temporada de la Champiñón League.</p>
+    </div>
+
+    <div class="historial-grid">
+      <div class="temporada-card pendiente">
+        <div class="trofeo-grande">🏆</div>
+        <div class="num-temporada">Temporada 1</div>
+        <div class="ganador">Por decidir</div>
+        <div class="detalle">Se conocerá al terminar la jornada 15</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="contenedor">
+    <h2>🍄 La leyenda se escribe jornada a jornada</h2>
+    <p>Sigue la clasificación en vivo para ver quién se acerca al primer Balón de Oro de la historia.</p>
+    <a href="clasificacion.html" class="boton oro">Ver clasificación</a>
+  </div>
+</section>
+
+<footer>
+  <div class="contenedor">
+    <div class="foot-marca">🍄 Champiñón League</div>
+    <div>La liga de fútbol entre amigos. Solo por diversión.</div>
+    <div class="foot-social">
+      <a href="#" aria-label="Instagram">📷</a>
+      <a href="#" aria-label="TikTok">🎵</a>
+      <a href="#" aria-label="YouTube">▶️</a>
+    </div>
+    <div>© 2026 Champiñón League</div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const enlaces = document.getElementById('enlaces');
+  toggle.addEventListener('click', () => enlaces.classList.toggle('abierto'));
+</script>
+
+</body>
+</html>

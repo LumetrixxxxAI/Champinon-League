@@ -1,0 +1,768 @@
+/* Champiñón League — estilos */
+
+:root {
+  --verde-cesped: #1a7a3c;
+  --verde-oscuro: #0e4023;
+  --verde-neon: #4ade80;
+  --oro: #f5b622;
+  --oro-claro: #ffd85e;
+  --negro: #0c1210;
+  --gris-oscuro: #161f1a;
+  --gris-medio: #2a352e;
+  --blanco: #f7f9f6;
+  --texto-suave: #b7c4bb;
+  --rojo-tarjeta: #e63946;
+  --radius: 16px;
+  --sombra: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--negro);
+  color: var(--blanco);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 20% -10%, rgba(74, 222, 128, 0.15), transparent 50%),
+    radial-gradient(ellipse at 100% 20%, rgba(245, 182, 34, 0.1), transparent 45%),
+    var(--negro);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Header ---------- */
+
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(12, 18, 16, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(74, 222, 128, 0.15);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+}
+
+.marca .icono {
+  font-size: 1.6rem;
+}
+
+.marca .liga {
+  color: var(--oro);
+}
+
+.enlaces {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.enlaces a {
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--texto-suave);
+  transition: background 0.2s, color 0.2s;
+}
+
+.enlaces a:hover,
+.enlaces a.activo {
+  background: rgba(74, 222, 128, 0.12);
+  color: var(--verde-neon);
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.menu-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--blanco);
+  border-radius: 2px;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  padding: 90px 24px 70px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(245, 182, 34, 0.4), transparent);
+}
+
+.hero-emoji {
+  font-size: 3.2rem;
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 18px;
+}
+
+.hero h1 .destacado {
+  color: var(--oro);
+  display: inline-block;
+}
+
+.hero p.subtitulo {
+  max-width: 640px;
+  margin: 0 auto 32px;
+  color: var(--texto-suave);
+  font-size: 1.1rem;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.stat-chip {
+  background: var(--gris-oscuro);
+  border: 1px solid var(--gris-medio);
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+
+.stat-chip strong {
+  color: var(--oro-claro);
+  font-size: 1rem;
+}
+
+/* ---------- Secciones generales ---------- */
+
+section {
+  padding: 60px 0;
+}
+
+.titulo-seccion {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.titulo-seccion h2 {
+  font-size: clamp(1.6rem, 4vw, 2.1rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.titulo-seccion .eyebrow {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--verde-neon);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.titulo-seccion p {
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+  max-width: 420px;
+}
+
+/* ---------- Tarjetas de jornada ---------- */
+
+.jornadas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+}
+
+.jornada-card {
+  background: linear-gradient(155deg, var(--gris-oscuro), var(--negro));
+  border: 1px solid var(--gris-medio);
+  border-radius: var(--radius);
+  padding: 26px;
+  position: relative;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.jornada-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245, 182, 34, 0.4);
+}
+
+.jornada-numero {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(74, 222, 128, 0.12);
+  color: var(--verde-neon);
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.jornada-card h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.jornada-fecha {
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+  margin-bottom: 18px;
+}
+
+.jornada-destacados {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.destacado-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+}
+
+.destacado-item .emoji {
+  font-size: 1.1rem;
+  width: 24px;
+  text-align: center;
+}
+
+.destacado-item .etiqueta {
+  color: var(--texto-suave);
+  min-width: 90px;
+}
+
+.destacado-item .valor {
+  font-weight: 700;
+}
+
+.mvp-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(90deg, rgba(245, 182, 34, 0.15), rgba(245, 182, 34, 0.02));
+  border: 1px solid rgba(245, 182, 34, 0.3);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+}
+
+.mvp-banner .trofeo {
+  font-size: 1.3rem;
+}
+
+.mvp-banner .texto small {
+  display: block;
+  color: var(--texto-suave);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.mvp-banner .texto strong {
+  color: var(--oro-claro);
+  font-size: 1.02rem;
+}
+
+.jornada-video {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--verde-neon);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  padding: 8px 14px;
+  border-radius: 999px;
+  transition: background 0.2s;
+}
+
+.jornada-video:hover {
+  background: rgba(74, 222, 128, 0.1);
+}
+
+.ver-mas-wrap {
+  text-align: center;
+  margin-top: 36px;
+}
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--verde-neon);
+  color: var(--verde-oscuro);
+  font-weight: 800;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(74, 222, 128, 0.25);
+}
+
+.boton.oro {
+  background: var(--oro);
+  color: var(--negro);
+}
+
+.boton.oro:hover {
+  box-shadow: 0 8px 24px rgba(245, 182, 34, 0.3);
+}
+
+.boton.fantasma {
+  background: transparent;
+  border: 1px solid var(--gris-medio);
+  color: var(--blanco);
+}
+
+/* ---------- Cómo funciona ---------- */
+
+.como-funciona {
+  background: var(--gris-oscuro);
+  border-radius: var(--radius);
+  padding: 44px 32px;
+  margin: 0 24px;
+  max-width: 1092px;
+  margin: 0 auto;
+}
+
+.pasos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+  margin-top: 30px;
+}
+
+.paso {
+  text-align: left;
+}
+
+.paso .num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--verde-neon);
+  color: var(--verde-oscuro);
+  font-weight: 800;
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+}
+
+.paso h4 {
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+.paso p {
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+/* ---------- Tabla clasificación ---------- */
+
+.tabla-wrap {
+  background: var(--gris-oscuro);
+  border: 1px solid var(--gris-medio);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+table.clasificacion {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.clasificacion th,
+table.clasificacion td {
+  padding: 16px 18px;
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+table.clasificacion thead th {
+  background: rgba(74, 222, 128, 0.08);
+  color: var(--verde-neon);
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+table.clasificacion tbody tr {
+  border-top: 1px solid var(--gris-medio);
+  transition: background 0.15s;
+}
+
+table.clasificacion tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+table.clasificacion tbody tr.lider td {
+  background: rgba(245, 182, 34, 0.06);
+}
+
+.pos {
+  font-weight: 800;
+  color: var(--texto-suave);
+  width: 40px;
+}
+
+.pos.top1 {
+  color: var(--oro);
+}
+
+.jugador-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--verde-neon), var(--verde-cesped));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: var(--negro);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.mvp-count {
+  font-weight: 800;
+  color: var(--oro-claro);
+}
+
+.badge-lider {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--oro);
+  color: var(--negro);
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 999px;
+  margin-left: 8px;
+}
+
+.leyenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 18px;
+  color: var(--texto-suave);
+  font-size: 0.82rem;
+}
+
+/* ---------- Balón de Oro ---------- */
+
+.balon-hero {
+  text-align: center;
+  padding: 50px 24px;
+}
+
+.balon-hero .emoji-grande {
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+.temporada-actual-card {
+  max-width: 640px;
+  margin: 0 auto;
+  background: linear-gradient(155deg, rgba(245, 182, 34, 0.1), var(--gris-oscuro));
+  border: 1px solid rgba(245, 182, 34, 0.35);
+  border-radius: var(--radius);
+  padding: 36px;
+  text-align: center;
+}
+
+.temporada-actual-card .eyebrow {
+  color: var(--oro);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.temporada-actual-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+}
+
+.temporada-actual-card p {
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.progreso-barra {
+  height: 8px;
+  background: var(--gris-medio);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progreso-barra .relleno {
+  height: 100%;
+  background: linear-gradient(90deg, var(--verde-neon), var(--oro));
+  border-radius: 999px;
+}
+
+.progreso-texto {
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+}
+
+.historial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.temporada-card {
+  background: var(--gris-oscuro);
+  border: 1px solid var(--gris-medio);
+  border-radius: var(--radius);
+  padding: 26px;
+  text-align: center;
+  position: relative;
+}
+
+.temporada-card.pendiente {
+  opacity: 0.55;
+  border-style: dashed;
+}
+
+.temporada-card .trofeo-grande {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.temporada-card .num-temporada {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--verde-neon);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.temporada-card .ganador {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.temporada-card .detalle {
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+}
+
+/* ---------- CTA / Footer ---------- */
+
+.cta {
+  text-align: center;
+  padding: 70px 24px;
+  background: radial-gradient(ellipse at center, rgba(74, 222, 128, 0.08), transparent 70%);
+}
+
+.cta h2 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.cta p {
+  color: var(--texto-suave);
+  max-width: 480px;
+  margin: 0 auto 26px;
+}
+
+footer {
+  border-top: 1px solid var(--gris-medio);
+  padding: 34px 24px;
+  text-align: center;
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+}
+
+footer .foot-marca {
+  font-weight: 800;
+  color: var(--blanco);
+  margin-bottom: 6px;
+}
+
+footer .foot-social {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin: 14px 0;
+}
+
+footer .foot-social a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--gris-medio);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+footer .foot-social a:hover {
+  border-color: var(--verde-neon);
+  transform: translateY(-2px);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 720px) {
+  .enlaces {
+    position: fixed;
+    top: 66px;
+    left: 0;
+    right: 0;
+    background: var(--gris-oscuro);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 14px;
+    border-bottom: 1px solid var(--gris-medio);
+    display: none;
+    gap: 4px;
+  }
+
+  .enlaces.abierto {
+    display: flex;
+  }
+
+  .enlaces a {
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .hero {
+    padding: 60px 20px 50px;
+  }
+
+  section {
+    padding: 44px 0;
+  }
+
+  table.clasificacion th,
+  table.clasificacion td {
+    padding: 12px 10px;
+    font-size: 0.82rem;
+  }
+
+  .jugador-cell {
+    gap: 8px;
+  }
+
+  .como-funciona {
+    margin: 0 20px;
+    padding: 30px 20px;
+  }
+}
