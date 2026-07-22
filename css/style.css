@@ -1,19 +1,22 @@
-/* Champiñón League — estilos */
+/* Champiñón League — estilos estilo UEFA Champions League */
 
 :root {
-  --verde-cesped: #1a7a3c;
-  --verde-oscuro: #0e4023;
-  --verde-neon: #4ade80;
-  --oro: #f5b622;
-  --oro-claro: #ffd85e;
-  --negro: #0c1210;
-  --gris-oscuro: #161f1a;
-  --gris-medio: #2a352e;
-  --blanco: #f7f9f6;
-  --texto-suave: #b7c4bb;
+  --azul-ucl: #0a1240;
+  --azul-medio: #101e5e;
+  --verde-cesped: #142868;      /* usado en gradientes (antes verde cancha) */
+  --verde-oscuro: #060a24;      /* fondo profundo / texto sobre acentos claros */
+  --verde-neon: #3f66ff;        /* azul UCL brillante, acento principal */
+  --violeta-ucl: #5b2a86;
+  --oro: #d4af37;
+  --oro-claro: #f3d675;
+  --negro: #05070f;
+  --gris-oscuro: #0d1330;
+  --gris-medio: #24316b;
+  --blanco: #f5f7fc;
+  --texto-suave: #9aa7cf;
   --rojo-tarjeta: #e63946;
-  --radius: 16px;
-  --sombra: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --radius: 14px;
+  --sombra: 0 10px 30px rgba(0, 0, 0, 0.45);
 }
 
 * {
@@ -34,15 +37,31 @@ body {
   overflow-x: hidden;
 }
 
+/* Fondo tipo "starball" de la Champions: degradado azul-violeta + estrellas dispersas */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: -2;
   background:
-    radial-gradient(ellipse at 20% -10%, rgba(74, 222, 128, 0.15), transparent 50%),
-    radial-gradient(ellipse at 100% 20%, rgba(245, 182, 34, 0.1), transparent 45%),
-    var(--negro);
+    radial-gradient(ellipse at 15% -10%, rgba(91, 42, 134, 0.35), transparent 50%),
+    radial-gradient(ellipse at 100% 10%, rgba(63, 102, 255, 0.25), transparent 45%),
+    radial-gradient(ellipse at 50% 100%, rgba(63, 102, 255, 0.12), transparent 55%),
+    linear-gradient(180deg, #070c26, var(--negro) 40%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.55) 1px, transparent 1.4px),
+    radial-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1.4px);
+  background-size: 140px 140px, 90px 90px;
+  background-position: 0 0, 45px 60px;
 }
 
 img {
@@ -68,9 +87,9 @@ a {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(12, 18, 16, 0.85);
+  background: rgba(5, 7, 15, 0.85);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(74, 222, 128, 0.15);
+  border-bottom: 1px solid rgba(63, 102, 255, 0.25);
 }
 
 .nav {
@@ -86,9 +105,10 @@ a {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: 800;
+  font-weight: 900;
   font-size: 1.3rem;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 .marca .icono {
@@ -96,7 +116,10 @@ a {
 }
 
 .marca .liga {
-  color: var(--oro);
+  background: linear-gradient(90deg, var(--verde-neon), var(--violeta-ucl));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .enlaces {
@@ -107,17 +130,19 @@ a {
 
 .enlaces a {
   padding: 8px 16px;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 0.95rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--texto-suave);
   transition: background 0.2s, color 0.2s;
 }
 
 .enlaces a:hover,
 .enlaces a.activo {
-  background: rgba(74, 222, 128, 0.12);
-  color: var(--verde-neon);
+  background: rgba(63, 102, 255, 0.15);
+  color: var(--blanco);
 }
 
 .menu-toggle {
@@ -153,7 +178,7 @@ a {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(245, 182, 34, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(63, 102, 255, 0.5), transparent);
 }
 
 .hero-emoji {
@@ -162,15 +187,20 @@ a {
 }
 
 .hero h1 {
+  font-family: 'Arial Black', 'Segoe UI', sans-serif;
   font-size: clamp(2.2rem, 6vw, 3.6rem);
   font-weight: 900;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
   line-height: 1.05;
   margin-bottom: 18px;
 }
 
 .hero h1 .destacado {
-  color: var(--oro);
+  background: linear-gradient(90deg, var(--verde-neon), var(--violeta-ucl));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   display: inline-block;
 }
 
@@ -192,15 +222,17 @@ a {
 .stat-chip {
   background: var(--gris-oscuro);
   border: 1px solid var(--gris-medio);
-  border-radius: 999px;
+  border-radius: 8px;
   padding: 10px 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
   color: var(--texto-suave);
 }
 
 .stat-chip strong {
-  color: var(--oro-claro);
+  color: var(--blanco);
   font-size: 1rem;
 }
 
@@ -220,18 +252,20 @@ section {
 }
 
 .titulo-seccion h2 {
+  font-family: 'Arial Black', 'Segoe UI', sans-serif;
   font-size: clamp(1.6rem, 4vw, 2.1rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
 }
 
 .titulo-seccion .eyebrow {
   display: block;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   color: var(--verde-neon);
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 6px;
 }
 
@@ -255,24 +289,27 @@ section {
   border-radius: var(--radius);
   padding: 26px;
   position: relative;
-  transition: transform 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .jornada-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(245, 182, 34, 0.4);
+  border-color: rgba(63, 102, 255, 0.5);
+  box-shadow: 0 12px 30px rgba(63, 102, 255, 0.12);
 }
 
 .jornada-numero {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(74, 222, 128, 0.12);
-  color: var(--verde-neon);
-  font-weight: 700;
-  font-size: 0.8rem;
+  background: rgba(63, 102, 255, 0.15);
+  color: var(--blanco);
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   padding: 5px 12px;
-  border-radius: 999px;
+  border-radius: 6px;
   margin-bottom: 16px;
 }
 
@@ -321,8 +358,8 @@ section {
   display: flex;
   align-items: center;
   gap: 10px;
-  background: linear-gradient(90deg, rgba(245, 182, 34, 0.15), rgba(245, 182, 34, 0.02));
-  border: 1px solid rgba(245, 182, 34, 0.3);
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.16), rgba(212, 175, 55, 0.02));
+  border: 1px solid rgba(212, 175, 55, 0.35);
   border-radius: 10px;
   padding: 10px 14px;
   margin-bottom: 16px;
@@ -335,9 +372,9 @@ section {
 .mvp-banner .texto small {
   display: block;
   color: var(--texto-suave);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
 }
 
 .mvp-banner .texto strong {
@@ -349,17 +386,19 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--verde-neon);
-  border: 1px solid rgba(74, 222, 128, 0.3);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--blanco);
+  border: 1px solid rgba(63, 102, 255, 0.4);
   padding: 8px 14px;
-  border-radius: 999px;
+  border-radius: 6px;
   transition: background 0.2s;
 }
 
 .jornada-video:hover {
-  background: rgba(74, 222, 128, 0.1);
+  background: rgba(63, 102, 255, 0.15);
 }
 
 .ver-mas-wrap {
@@ -371,12 +410,14 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--verde-neon);
-  color: var(--verde-oscuro);
+  background: linear-gradient(90deg, var(--verde-neon), var(--violeta-ucl));
+  color: var(--blanco);
   font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
   padding: 12px 26px;
-  border-radius: 999px;
-  font-size: 0.95rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
   border: none;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -384,16 +425,16 @@ section {
 
 .boton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(74, 222, 128, 0.25);
+  box-shadow: 0 8px 24px rgba(63, 102, 255, 0.3);
 }
 
 .boton.oro {
-  background: var(--oro);
+  background: linear-gradient(90deg, var(--oro), var(--oro-claro));
   color: var(--negro);
 }
 
 .boton.oro:hover {
-  box-shadow: 0 8px 24px rgba(245, 182, 34, 0.3);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
 }
 
 .boton.fantasma {
@@ -406,6 +447,7 @@ section {
 
 .como-funciona {
   background: var(--gris-oscuro);
+  border: 1px solid var(--gris-medio);
   border-radius: var(--radius);
   padding: 44px 32px;
   margin: 0 24px;
@@ -430,9 +472,9 @@ section {
   justify-content: center;
   width: 34px;
   height: 34px;
-  border-radius: 50%;
-  background: var(--verde-neon);
-  color: var(--verde-oscuro);
+  border-radius: 6px;
+  background: linear-gradient(135deg, var(--verde-neon), var(--violeta-ucl));
+  color: var(--blanco);
   font-weight: 800;
   font-size: 0.95rem;
   margin-bottom: 14px;
@@ -470,12 +512,12 @@ table.clasificacion td {
 }
 
 table.clasificacion thead th {
-  background: rgba(74, 222, 128, 0.08);
-  color: var(--verde-neon);
+  background: rgba(63, 102, 255, 0.12);
+  color: var(--blanco);
   text-transform: uppercase;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  font-weight: 800;
 }
 
 table.clasificacion tbody tr {
@@ -488,7 +530,7 @@ table.clasificacion tbody tr:hover {
 }
 
 table.clasificacion tbody tr.lider td {
-  background: rgba(245, 182, 34, 0.06);
+  background: rgba(212, 175, 55, 0.07);
 }
 
 .pos {
@@ -511,14 +553,14 @@ table.clasificacion tbody tr.lider td {
 .avatar {
   width: 36px;
   height: 36px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--verde-neon), var(--verde-cesped));
+  border-radius: 6px;
+  background: linear-gradient(135deg, var(--verde-neon), var(--violeta-ucl));
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  color: var(--negro);
-  font-size: 0.85rem;
+  color: var(--blanco);
+  font-size: 0.8rem;
   flex-shrink: 0;
 }
 
@@ -531,10 +573,12 @@ table.clasificacion tbody tr.lider td {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  background: var(--oro);
+  background: linear-gradient(90deg, var(--oro), var(--oro-claro));
   color: var(--negro);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   padding: 3px 9px;
   border-radius: 999px;
   margin-left: 8px;
@@ -564,8 +608,8 @@ table.clasificacion tbody tr.lider td {
 .temporada-actual-card {
   max-width: 640px;
   margin: 0 auto;
-  background: linear-gradient(155deg, rgba(245, 182, 34, 0.1), var(--gris-oscuro));
-  border: 1px solid rgba(245, 182, 34, 0.35);
+  background: linear-gradient(155deg, rgba(212, 175, 55, 0.1), var(--gris-oscuro));
+  border: 1px solid rgba(212, 175, 55, 0.35);
   border-radius: var(--radius);
   padding: 36px;
   text-align: center;
@@ -573,10 +617,10 @@ table.clasificacion tbody tr.lider td {
 
 .temporada-actual-card .eyebrow {
   color: var(--oro);
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
   margin-bottom: 12px;
   display: block;
 }
@@ -637,11 +681,11 @@ table.clasificacion tbody tr.lider td {
 }
 
 .temporada-card .num-temporada {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   color: var(--verde-neon);
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 8px;
 }
 
@@ -661,12 +705,14 @@ table.clasificacion tbody tr.lider td {
 .cta {
   text-align: center;
   padding: 70px 24px;
-  background: radial-gradient(ellipse at center, rgba(74, 222, 128, 0.08), transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(63, 102, 255, 0.1), transparent 70%);
 }
 
 .cta h2 {
+  font-family: 'Arial Black', 'Segoe UI', sans-serif;
   font-size: clamp(1.6rem, 4vw, 2.2rem);
-  font-weight: 800;
+  font-weight: 900;
+  text-transform: uppercase;
   margin-bottom: 14px;
 }
 
@@ -685,7 +731,9 @@ footer {
 }
 
 footer .foot-marca {
-  font-weight: 800;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
   color: var(--blanco);
   margin-bottom: 6px;
 }
@@ -700,7 +748,7 @@ footer .foot-social {
 footer .foot-social a {
   width: 38px;
   height: 38px;
-  border-radius: 50%;
+  border-radius: 6px;
   border: 1px solid var(--gris-medio);
   display: flex;
   align-items: center;
