@@ -5,9 +5,9 @@
   --azul-medio: #101e5e;
   --verde-cesped: #142868;      /* usado en gradientes (antes verde cancha) */
   --verde-oscuro: #060a24;      /* fondo profundo / texto sobre acentos claros */
-  --verde-neon: #3f66ff;        /* azul UCL brillante, acento principal */
-  --violeta-ucl: #5b2a86;
-  --magenta-ucl: #ff2fc0;       /* toque magenta tipo starball UEFA */
+  --verde-neon: #2f6cff;        /* azul UCL brillante, acento principal */
+  --azul-profundo: #0d1ee0;     /* azul intenso para degradados */
+  --azul-brillo: #4fc3ff;       /* azul cian claro, reflejos tipo cristal */
   --oro: #d4af37;
   --oro-claro: #f3d675;
   --negro: #05070f;
@@ -38,14 +38,14 @@ body {
   overflow-x: hidden;
 }
 
-/* Fondo tipo "starball" de la Champions: degradado azul-violeta + estrellas dispersas */
+/* Fondo tipo "starball" de la Champions: degradado de azules + estrellas dispersas */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -2;
   background:
-    radial-gradient(ellipse at 15% -10%, rgba(91, 42, 134, 0.35), transparent 50%),
+    radial-gradient(ellipse at 15% -10%, rgba(13, 30, 224, 0.35), transparent 50%),
     radial-gradient(ellipse at 100% 10%, rgba(63, 102, 255, 0.25), transparent 45%),
     radial-gradient(ellipse at 50% 100%, rgba(63, 102, 255, 0.12), transparent 55%),
     linear-gradient(180deg, #070c26, var(--negro) 40%);
@@ -117,7 +117,7 @@ a {
 }
 
 .marca .liga {
-  background: linear-gradient(90deg, var(--verde-neon), var(--violeta-ucl), var(--magenta-ucl));
+  background: linear-gradient(90deg, var(--azul-brillo), var(--verde-neon), var(--azul-profundo));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -195,11 +195,11 @@ a {
     conic-gradient(
       from 200deg at 50% 30%,
       rgba(63, 102, 255, 0.6) 0deg,
-      rgba(91, 42, 134, 0.55) 70deg,
-      rgba(255, 47, 192, 0.5) 130deg,
+      rgba(13, 30, 224, 0.55) 70deg,
+      rgba(79, 195, 255, 0.5) 130deg,
       transparent 180deg,
-      rgba(91, 42, 134, 0.5) 230deg,
-      rgba(255, 47, 192, 0.45) 290deg,
+      rgba(13, 30, 224, 0.5) 230deg,
+      rgba(79, 195, 255, 0.4) 290deg,
       rgba(63, 102, 255, 0.6) 360deg
     );
   filter: blur(80px) saturate(1.35);
@@ -227,7 +227,7 @@ a {
 }
 
 .hero h1 .destacado {
-  background: linear-gradient(90deg, var(--verde-neon), var(--violeta-ucl), var(--magenta-ucl));
+  background: linear-gradient(90deg, var(--azul-brillo), var(--verde-neon), var(--azul-profundo));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -704,7 +704,7 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(90deg, var(--verde-neon), var(--violeta-ucl), var(--magenta-ucl));
+  background: linear-gradient(90deg, var(--azul-brillo), var(--verde-neon), var(--azul-profundo));
   color: var(--blanco);
   font-weight: 800;
   text-transform: uppercase;
@@ -767,7 +767,7 @@ section {
   width: 34px;
   height: 34px;
   border-radius: 6px;
-  background: linear-gradient(135deg, var(--verde-neon), var(--violeta-ucl));
+  background: linear-gradient(135deg, var(--verde-neon), var(--azul-profundo));
   color: var(--blanco);
   font-weight: 800;
   font-size: 0.95rem;
@@ -848,7 +848,7 @@ table.clasificacion tbody tr.lider td {
   width: 36px;
   height: 36px;
   border-radius: 6px;
-  background: linear-gradient(135deg, var(--verde-neon), var(--violeta-ucl));
+  background: linear-gradient(135deg, var(--verde-neon), var(--azul-profundo));
   display: flex;
   align-items: center;
   justify-content: center;
