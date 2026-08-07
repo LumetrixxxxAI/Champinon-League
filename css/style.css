@@ -800,16 +800,16 @@ table.clasificacion {
 
 table.clasificacion th,
 table.clasificacion td {
-  padding: 16px 18px;
+  padding: 24px 24px;
   text-align: left;
-  font-size: 0.92rem;
+  font-size: 1.15rem;
 }
 
 table.clasificacion thead th {
   background: rgba(63, 102, 255, 0.12);
   color: var(--blanco);
   text-transform: uppercase;
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   letter-spacing: 0.1em;
   font-weight: 800;
 }
@@ -830,7 +830,8 @@ table.clasificacion tbody tr.lider td {
 .pos {
   font-weight: 800;
   color: var(--texto-suave);
-  width: 40px;
+  width: 50px;
+  font-size: 1.25rem;
 }
 
 .pos.top1 {
@@ -840,21 +841,21 @@ table.clasificacion tbody tr.lider td {
 .jugador-cell {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   font-weight: 700;
 }
 
 .avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 6px;
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
   background: linear-gradient(135deg, var(--verde-neon), var(--azul-profundo));
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
   color: var(--blanco);
-  font-size: 0.8rem;
+  font-size: 1.05rem;
   flex-shrink: 0;
   overflow: hidden;
 }
@@ -868,6 +869,7 @@ table.clasificacion tbody tr.lider td {
 
 .mvp-count {
   font-weight: 800;
+  font-size: 1.25rem;
   color: var(--oro-claro);
 }
 
@@ -877,11 +879,11 @@ table.clasificacion tbody tr.lider td {
   gap: 5px;
   background: linear-gradient(90deg, var(--oro), var(--oro-claro));
   color: var(--negro);
-  font-size: 0.68rem;
+  font-size: 0.78rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  padding: 3px 9px;
+  padding: 4px 11px;
   border-radius: 999px;
   margin-left: 8px;
 }
@@ -1109,12 +1111,18 @@ footer .foot-social a:hover {
 
   table.clasificacion th,
   table.clasificacion td {
-    padding: 12px 10px;
-    font-size: 0.82rem;
+    padding: 14px 12px;
+    font-size: 0.95rem;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 0.85rem;
   }
 
   .jugador-cell {
-    gap: 8px;
+    gap: 10px;
   }
 
   .como-funciona {
