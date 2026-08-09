@@ -479,6 +479,15 @@ section {
     radial-gradient(ellipse at 30% 20%, rgba(63, 102, 255, 0.4), transparent 60%),
     linear-gradient(155deg, var(--azul-medio), var(--negro));
   position: relative;
+  overflow: hidden;
+}
+
+.noticia-img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .noticia-card.destacada .noticia-img {
