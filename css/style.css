@@ -684,6 +684,15 @@ section {
   border: 1px solid var(--gris-medio);
 }
 
+.video-frame[data-video] {
+  cursor: pointer;
+}
+
+.video-frame[data-video]:hover .play-btn {
+  background: rgba(63, 102, 255, 0.35);
+  transform: scale(1.08);
+}
+
 .jornada-card .video-frame {
   flex: 0 0 320px;
   width: 320px;
@@ -709,6 +718,7 @@ section {
   justify-content: center;
   font-size: 1.3rem;
   color: var(--blanco);
+  transition: background 0.2s, transform 0.2s;
 }
 
 .video-frame .video-label {

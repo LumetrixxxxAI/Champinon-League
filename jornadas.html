@@ -47,22 +47,20 @@
         <span class="eyebrow">Temporada 1 · Jornada 6 de 15</span>
         <h2>Todas las jornadas</h2>
       </div>
-      <p>Cuando subamos el vídeo de cada jornada, sustituye el reproductor de aquí abajo por el enlace de YouTube, Instagram o TikTok.</p>
+      <p>Los vídeos están alojados en Drive. Pulsa sobre el reproductor de cualquier jornada para verlo aquí mismo.</p>
     </div>
 
     <div class="jornadas-grid">
 
       <div class="jornada-card">
-        <div class="video-frame">
-          <span class="video-label">Vídeo pendiente</span>
+        <div class="video-frame" data-video="https://drive.google.com/file/d/1DZvZIdq5Cnjq1n04O5PN-iydIawpRbhq/preview">
+          <span class="video-label">Ver highlights</span>
           <div class="play-btn">▶</div>
-          <!-- Cuando subas el vídeo, sustituye este div por:
-               <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO" allowfullscreen></iframe> -->
         </div>
         <div class="jornada-info">
           <span class="jornada-numero">⚽ Jornada 6</span>
           <h3>Por confirmar</h3>
-          <p class="jornada-fecha">Próximamente — pendiente de jugar</p>
+          <p class="jornada-fecha">Vídeo disponible — datos por rellenar</p>
           <div class="jornada-destacados">
             <div class="destacado-item">
               <span class="emoji">🥅</span>
@@ -84,8 +82,8 @@
       </div>
 
       <div class="jornada-card">
-        <div class="video-frame">
-          <span class="video-label">Vídeo pendiente</span>
+        <div class="video-frame" data-video="https://drive.google.com/file/d/1oa-KqwdreI3rXIQ0evJF5rJkgrM0j2fG/preview">
+          <span class="video-label">Ver highlights</span>
           <div class="play-btn">▶</div>
         </div>
         <div class="jornada-info">
@@ -120,8 +118,8 @@
       </div>
 
       <div class="jornada-card">
-        <div class="video-frame">
-          <span class="video-label">Vídeo pendiente</span>
+        <div class="video-frame" data-video="https://drive.google.com/file/d/1O-YlskuFnlTnGBcxI82gfBpbo5x4yG9r/preview">
+          <span class="video-label">Ver highlights</span>
           <div class="play-btn">▶</div>
         </div>
         <div class="jornada-info">
@@ -175,6 +173,14 @@
   const toggle = document.getElementById('menuToggle');
   const enlaces = document.getElementById('enlaces');
   toggle.addEventListener('click', () => enlaces.classList.toggle('abierto'));
+
+  document.querySelectorAll('.video-frame[data-video]').forEach((frame) => {
+    frame.addEventListener('click', () => {
+      if (frame.querySelector('iframe')) return;
+      const src = frame.dataset.video;
+      frame.innerHTML = `<iframe src="${src}" allow="autoplay; fullscreen"></iframe>`;
+    });
+  });
 </script>
 
 </body>
