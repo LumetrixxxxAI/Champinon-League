@@ -140,6 +140,19 @@ a {
   transition: background 0.2s, color 0.2s;
 }
 
+.badge-proximamente {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.18);
+  color: var(--oro-claro);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  vertical-align: middle;
+}
+
 .enlaces a:hover,
 .enlaces a.activo {
   background: rgba(63, 102, 255, 0.15);
@@ -1070,30 +1083,6 @@ footer .foot-marca {
   letter-spacing: 0.03em;
   color: var(--blanco);
   margin-bottom: 6px;
-}
-
-footer .foot-social {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  margin: 14px 0;
-}
-
-footer .foot-social a {
-  width: 38px;
-  height: 38px;
-  border-radius: 6px;
-  border: 1px solid var(--gris-medio);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  transition: border-color 0.2s, transform 0.2s;
-}
-
-footer .foot-social a:hover {
-  border-color: var(--verde-neon);
-  transform: translateY(-2px);
 }
 
 /* ---------- Responsive ---------- */
