@@ -646,17 +646,6 @@ section {
   background: rgba(63, 102, 255, 0.1);
 }
 
-.widget-proxima .proxima-titulo {
-  font-weight: 800;
-  font-size: 1.05rem;
-  margin-bottom: 4px;
-}
-
-.widget-proxima p {
-  color: var(--texto-suave);
-  font-size: 0.85rem;
-}
-
 /* ---------- Vídeo highlights (jornadas) ---------- */
 
 .video-frame {
@@ -1116,6 +1105,14 @@ footer .foot-social a:hover {
 }
 
 @media (max-width: 720px) {
+  html {
+    font-size: 85%;
+  }
+
+  .contenedor {
+    padding: 0 16px;
+  }
+
   .enlaces {
     position: fixed;
     top: 66px;
@@ -1143,11 +1140,33 @@ footer .foot-social a:hover {
   }
 
   .hero {
-    padding: 60px 20px 50px;
+    padding: 40px 16px 32px;
+  }
+
+  .hero-emoji {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+  }
+
+  .hero-stats {
+    gap: 8px;
+  }
+
+  .stat-chip {
+    padding: 7px 14px;
+    font-size: 0.78rem;
   }
 
   section {
-    padding: 44px 0;
+    padding: 32px 0;
+  }
+
+  .noticia-img {
+    font-size: 1.8rem;
+  }
+
+  .noticia-card.destacada .noticia-img {
+    font-size: 2.4rem;
   }
 
   .avatar {
