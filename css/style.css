@@ -750,52 +750,6 @@ section {
   color: var(--blanco);
 }
 
-/* ---------- Cómo funciona ---------- */
-
-.como-funciona {
-  background: var(--gris-oscuro);
-  border: 1px solid var(--gris-medio);
-  border-radius: var(--radius);
-  padding: 44px 32px;
-  margin: 0 24px;
-  max-width: 1092px;
-  margin: 0 auto;
-}
-
-.pasos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 28px;
-  margin-top: 30px;
-}
-
-.paso {
-  text-align: left;
-}
-
-.paso .num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 6px;
-  background: linear-gradient(135deg, var(--verde-neon), var(--azul-profundo));
-  color: var(--blanco);
-  font-weight: 800;
-  font-size: 0.95rem;
-  margin-bottom: 14px;
-}
-
-.paso h4 {
-  font-size: 1.05rem;
-  margin-bottom: 6px;
-}
-
-.paso p {
-  color: var(--texto-suave);
-  font-size: 0.9rem;
-}
 
 /* ---------- Ranking de clasificación (estilo lista tipo Post United) ---------- */
 
@@ -1228,11 +1182,6 @@ footer .foot-social a:hover {
 
   .ranking-mvp-wrap {
     min-width: 44px;
-  }
-
-  .como-funciona {
-    margin: 0 20px;
-    padding: 30px 20px;
   }
 }
 
