@@ -308,12 +308,15 @@ section {
 /* ---------- Tarjetas de jornada ---------- */
 
 .jornadas-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 22px;
 }
 
 .jornada-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 26px;
   background: linear-gradient(155deg, var(--gris-oscuro), var(--negro));
   border: 1px solid var(--gris-medio);
   border-radius: var(--radius);
@@ -326,6 +329,11 @@ section {
   transform: translateY(-4px);
   border-color: rgba(63, 102, 255, 0.5);
   box-shadow: 0 12px 30px rgba(63, 102, 255, 0.12);
+}
+
+.jornada-info {
+  flex: 1;
+  min-width: 0;
 }
 
 .jornada-numero {
@@ -357,8 +365,9 @@ section {
 
 .jornada-destacados {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px 32px;
   margin-bottom: 18px;
 }
 
@@ -661,8 +670,12 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 18px;
   border: 1px solid var(--gris-medio);
+}
+
+.jornada-card .video-frame {
+  flex: 0 0 320px;
+  width: 320px;
 }
 
 .video-frame iframe {
@@ -784,66 +797,7 @@ section {
   font-size: 0.9rem;
 }
 
-/* ---------- Tabla clasificación ---------- */
-
-.tabla-wrap {
-  background: var(--gris-oscuro);
-  border: 1px solid var(--gris-medio);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-table.clasificacion {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-table.clasificacion th,
-table.clasificacion td {
-  padding: 24px 24px;
-  text-align: left;
-  font-size: 1.15rem;
-}
-
-table.clasificacion thead th {
-  background: rgba(63, 102, 255, 0.12);
-  color: var(--blanco);
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
-  font-weight: 800;
-}
-
-table.clasificacion tbody tr {
-  border-top: 1px solid var(--gris-medio);
-  transition: background 0.15s;
-}
-
-table.clasificacion tbody tr:hover {
-  background: rgba(255, 255, 255, 0.02);
-}
-
-table.clasificacion tbody tr.lider td {
-  background: rgba(212, 175, 55, 0.07);
-}
-
-.pos {
-  font-weight: 800;
-  color: var(--texto-suave);
-  width: 50px;
-  font-size: 1.25rem;
-}
-
-.pos.top1 {
-  color: var(--oro);
-}
-
-.jugador-cell {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  font-weight: 700;
-}
+/* ---------- Ranking de clasificación (estilo lista tipo Post United) ---------- */
 
 .avatar {
   width: 52px;
@@ -867,10 +821,134 @@ table.clasificacion tbody tr.lider td {
   display: block;
 }
 
-.mvp-count {
+.ranking-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ranking-fila {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--gris-oscuro);
+  border: 1px solid var(--gris-medio);
+  border-radius: var(--radius);
+  padding: 18px 24px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.ranking-fila:hover {
+  transform: translateX(4px);
+  border-color: rgba(63, 102, 255, 0.4);
+}
+
+.ranking-fila.lider {
+  border-color: rgba(212, 175, 55, 0.45);
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.09), var(--gris-oscuro) 60%);
+}
+
+.ranking-num {
+  width: 44px;
+  flex-shrink: 0;
+  text-align: center;
+  font-family: 'Arial Black', 'Segoe UI', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--texto-suave);
+}
+
+.ranking-num.top1 {
+  color: var(--oro);
+}
+
+.ranking-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--verde-neon), var(--azul-profundo));
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 800;
-  font-size: 1.25rem;
+  color: var(--blanco);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 2px solid var(--gris-medio);
+}
+
+.ranking-fila.lider .ranking-avatar {
+  border-color: var(--oro);
+}
+
+.ranking-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ranking-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.ranking-nombre {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.ranking-barra-wrap {
+  height: 8px;
+  background: var(--gris-medio);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.ranking-barra-relleno {
+  height: 100%;
+  background: linear-gradient(90deg, var(--verde-neon), var(--azul-profundo));
+  border-radius: 999px;
+}
+
+.ranking-fila.lider .ranking-barra-relleno {
+  background: linear-gradient(90deg, var(--oro), var(--oro-claro));
+}
+
+.ranking-sub {
+  margin-top: 6px;
+  color: var(--texto-suave);
+  font-size: 0.78rem;
+}
+
+.ranking-mvp-wrap {
+  flex-shrink: 0;
+  text-align: center;
+  min-width: 60px;
+}
+
+.ranking-mvp {
+  display: block;
+  font-family: 'Arial Black', 'Segoe UI', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
   color: var(--oro-claro);
+  line-height: 1;
+}
+
+.ranking-mvp-label {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--texto-suave);
+  font-weight: 700;
 }
 
 .badge-lider {
@@ -1072,6 +1150,15 @@ footer .foot-social a:hover {
   .portada-layout {
     grid-template-columns: 1fr;
   }
+
+  .jornada-card {
+    flex-direction: column;
+  }
+
+  .jornada-card .video-frame {
+    width: 100%;
+    flex-basis: auto;
+  }
 }
 
 @media (max-width: 720px) {
@@ -1109,24 +1196,50 @@ footer .foot-social a:hover {
     padding: 44px 0;
   }
 
-  table.clasificacion th,
-  table.clasificacion td {
-    padding: 14px 12px;
-    font-size: 0.95rem;
-  }
-
   .avatar {
     width: 40px;
     height: 40px;
     font-size: 0.85rem;
   }
 
-  .jugador-cell {
-    gap: 10px;
+  .ranking-fila {
+    gap: 12px;
+    padding: 14px 16px;
+  }
+
+  .ranking-avatar {
+    width: 48px;
+    height: 48px;
+    font-size: 0.85rem;
+  }
+
+  .ranking-num {
+    width: 30px;
+    font-size: 1.3rem;
+  }
+
+  .ranking-nombre {
+    font-size: 0.98rem;
+  }
+
+  .ranking-mvp {
+    font-size: 1.3rem;
+  }
+
+  .ranking-mvp-wrap {
+    min-width: 44px;
   }
 
   .como-funciona {
     margin: 0 20px;
     padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ranking-nombre .badge-lider {
+    display: block;
+    margin-top: 4px;
+    width: fit-content;
   }
 }
