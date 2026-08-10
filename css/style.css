@@ -434,6 +434,18 @@ section {
   font-size: 1.02rem;
 }
 
+.mvp-poster {
+  margin-top: 16px;
+  max-width: 190px;
+}
+
+.mvp-poster img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
 .jornada-video {
   display: inline-flex;
   align-items: center;
