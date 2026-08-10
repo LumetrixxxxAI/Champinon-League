@@ -527,6 +527,11 @@ section {
   color: var(--oro-claro);
 }
 
+.noticia-tag.rojo {
+  border-color: rgba(230, 57, 70, 0.55);
+  color: #ff8a94;
+}
+
 .noticia-body {
   padding: 18px 20px 22px;
 }
