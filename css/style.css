@@ -679,6 +679,38 @@ section {
   background: rgba(63, 102, 255, 0.1);
 }
 
+.reglas-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.regla-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.regla-num {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(63, 102, 255, 0.15);
+  color: var(--verde-neon);
+  font-weight: 800;
+  font-size: 0.72rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.regla-item p {
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
 /* ---------- Vídeo highlights (jornadas) ---------- */
 
 .video-frame {
