@@ -887,47 +887,53 @@ section {
 .ranking-lista {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 8px;
+  background: var(--gris-oscuro);
+  border: 1px solid var(--gris-medio);
+  border-radius: var(--radius);
+  padding: 10px;
 }
 
 .ranking-fila {
   display: flex;
   align-items: center;
-  gap: 20px;
-  background: var(--gris-oscuro);
-  border: 1px solid var(--gris-medio);
-  border-radius: var(--radius);
-  padding: 18px 24px;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  gap: 14px;
+  background: var(--negro);
+  border-radius: 8px;
+  padding: 10px 14px;
+  transition: transform 0.15s ease;
 }
 
 .ranking-fila:hover {
   transform: translateX(4px);
-  border-color: rgba(63, 102, 255, 0.4);
 }
 
 .ranking-fila.lider {
-  border-color: rgba(212, 175, 55, 0.45);
-  background: linear-gradient(90deg, rgba(212, 175, 55, 0.09), var(--gris-oscuro) 60%);
+  background: linear-gradient(90deg, var(--oro), var(--oro-claro));
 }
 
 .ranking-num {
-  width: 44px;
   flex-shrink: 0;
-  text-align: center;
-  font-family: 'Arial Black', 'Segoe UI', sans-serif;
-  font-size: 1.8rem;
+  width: 34px;
+  height: 34px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--verde-neon);
+  color: var(--blanco);
   font-weight: 900;
-  color: var(--texto-suave);
+  font-size: 1rem;
 }
 
-.ranking-num.top1 {
-  color: var(--oro);
+.ranking-fila.lider .ranking-num {
+  background: var(--azul-profundo);
+  color: var(--blanco);
 }
 
 .ranking-avatar {
-  width: 64px;
-  height: 64px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--verde-neon), var(--azul-profundo));
   display: flex;
@@ -935,14 +941,14 @@ section {
   justify-content: center;
   font-weight: 800;
   color: var(--blanco);
-  font-size: 1.1rem;
+  font-size: 0.85rem;
   flex-shrink: 0;
   overflow: hidden;
   border: 2px solid var(--gris-medio);
 }
 
 .ranking-fila.lider .ranking-avatar {
-  border-color: var(--oro);
+  border-color: var(--negro);
 }
 
 .ranking-avatar img {
@@ -952,81 +958,51 @@ section {
   display: block;
 }
 
-.ranking-info {
+.ranking-nombre {
   flex: 1;
   min-width: 0;
-}
-
-.ranking-nombre {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   font-weight: 800;
-  font-size: 1.15rem;
-  margin-bottom: 8px;
-}
-
-.ranking-barra-wrap {
-  height: 8px;
-  background: var(--gris-medio);
-  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 0.95rem;
+  color: var(--blanco);
+  white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.ranking-barra-relleno {
-  height: 100%;
-  background: linear-gradient(90deg, var(--verde-neon), var(--azul-profundo));
-  border-radius: 999px;
-}
-
-.ranking-fila.lider .ranking-barra-relleno {
-  background: linear-gradient(90deg, var(--oro), var(--oro-claro));
-}
-
-.ranking-sub {
-  margin-top: 6px;
-  color: var(--texto-suave);
-  font-size: 0.78rem;
+.ranking-fila.lider .ranking-nombre {
+  color: var(--negro);
 }
 
 .ranking-mvp-wrap {
   flex-shrink: 0;
+  min-width: 44px;
   text-align: center;
-  min-width: 60px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: var(--oro);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.ranking-fila.lider .ranking-mvp-wrap {
+  background: var(--negro);
 }
 
 .ranking-mvp {
   display: block;
-  font-family: 'Arial Black', 'Segoe UI', sans-serif;
-  font-size: 1.8rem;
   font-weight: 900;
-  color: var(--oro-claro);
+  font-size: 1.05rem;
+  color: var(--negro);
   line-height: 1;
 }
 
-.ranking-mvp-label {
-  display: block;
-  margin-top: 4px;
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--texto-suave);
-  font-weight: 700;
+.ranking-fila.lider .ranking-mvp {
+  color: var(--oro-claro);
 }
 
-.badge-lider {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  background: linear-gradient(90deg, var(--oro), var(--oro-claro));
-  color: var(--negro);
-  font-size: 0.78rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  padding: 4px 11px;
-  border-radius: 999px;
-  margin-left: 8px;
+.ranking-mvp-label {
+  display: none;
 }
 
 .leyenda {
@@ -1277,33 +1253,27 @@ footer .foot-marca {
   }
 
   .ranking-avatar {
-    width: 48px;
-    height: 48px;
-    font-size: 0.85rem;
+    width: 34px;
+    height: 34px;
+    font-size: 0.72rem;
   }
 
   .ranking-num {
-    width: 30px;
-    font-size: 1.3rem;
+    width: 28px;
+    height: 28px;
+    font-size: 0.85rem;
   }
 
   .ranking-nombre {
-    font-size: 0.98rem;
+    font-size: 0.82rem;
   }
 
   .ranking-mvp {
-    font-size: 1.3rem;
+    font-size: 0.9rem;
   }
 
   .ranking-mvp-wrap {
-    min-width: 44px;
-  }
-}
-
-@media (max-width: 480px) {
-  .ranking-nombre .badge-lider {
-    display: block;
-    margin-top: 4px;
-    width: fit-content;
+    min-width: 34px;
+    padding: 5px 10px;
   }
 }
