@@ -47,7 +47,7 @@
         <span class="eyebrow">Temporada 1 · Jornada 8 de 15</span>
         <h2>Todas las jornadas</h2>
       </div>
-      <p>Los vídeos están alojados en Drive. Pulsa sobre el reproductor de cualquier jornada para verlo aquí mismo.</p>
+      <p>Los vídeos están alojados en Drive. Pulsa sobre el reproductor de cualquier jornada para verlo en una pestaña nueva.</p>
     </div>
 
     <div class="jornadas-grid">
@@ -256,9 +256,8 @@
 
   document.querySelectorAll('.video-frame[data-video]').forEach((frame) => {
     frame.addEventListener('click', () => {
-      if (frame.querySelector('iframe')) return;
-      const src = frame.dataset.video;
-      frame.innerHTML = `<iframe src="${src}" allow="autoplay; fullscreen"></iframe>`;
+      const src = frame.dataset.video.replace('/preview', '/view');
+      window.open(src, '_blank', 'noopener');
     });
   });
 </script>
