@@ -442,6 +442,34 @@ section {
   font-size: 1.02rem;
 }
 
+.lesion-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(90deg, rgba(230, 57, 70, 0.16), rgba(230, 57, 70, 0.02));
+  border: 1px solid rgba(230, 57, 70, 0.35);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+}
+
+.lesion-banner .cruz {
+  font-size: 1.3rem;
+}
+
+.lesion-banner .texto small {
+  display: block;
+  color: var(--texto-suave);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.lesion-banner .texto strong {
+  color: var(--rojo-tarjeta);
+  font-size: 1.02rem;
+}
+
 .mvp-poster {
   flex-shrink: 0;
   height: 230px;
