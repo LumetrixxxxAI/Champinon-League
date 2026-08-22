@@ -60,32 +60,32 @@
 
       <div class="noticias-col">
 
-        <div class="noticia-card destacada">
+        <div class="noticia-card destacada" data-fecha="2026-08-22">
           <div class="noticia-img">
-            <span class="noticia-tag oro">¡Última hora!</span>
-            <img src="img/noticias/paco-lesion.png" alt="Paco recuperándose de su lesión en el dedo del pie">
+            <span class="noticia-tag oro">Última hora</span>
+            <img src="img/noticias/susto-paco.png" alt="Compañeros celebrando alrededor de Paco">
           </div>
           <div class="noticia-body">
             <div class="noticia-fecha">Parte médico</div>
-            <h3>#FuerzaPaco: vuelve a los terrenos de juego en la jornada 8</h3>
-            <p>Tras los reconocimientos médicos por su fractura en el dedo del pie, Paco ha estado 2 jornadas de baja y sufrió una recaída que le costó otra jornada más. Los médicos estiman que su lesión estará superada y podrá volver a jugar en la jornada 8.</p>
+            <h3>Susto de Paco</h3>
+            <p>Tras una acción de remate, nuestro compañero y jugador Paco sufrió una contusión en su dedo del pie del cual se lesionó de gravedad, los médicos se esperaban una recaída pero gracias a dios no fue nada y se quedó solo en un susto.</p>
           </div>
         </div>
 
         <div class="noticias-grid-secundarias">
-          <div class="noticia-card">
+          <div class="noticia-card" data-fecha="2026-08-08">
             <div class="noticia-img">
               <span class="noticia-tag oro">Parte médico</span>
-              <img src="img/noticias/susto-paco.png" alt="Compañeros celebrando alrededor de Paco">
+              <img src="img/noticias/paco-lesion.png" alt="Paco recuperándose de su lesión en el dedo del pie">
             </div>
             <div class="noticia-body">
-              <div class="noticia-fecha">Última hora</div>
-              <h3>Susto de Paco</h3>
-              <p>Tras una acción de remate, nuestro compañero y jugador Paco sufrió una contusión en su dedo del pie del cual se lesionó de gravedad, los médicos se esperaban una recaída pero gracias a dios no fue nada y se quedó solo en un susto.</p>
+              <div class="noticia-fecha">Parte médico</div>
+              <h3>#FuerzaPaco: vuelve a los terrenos de juego en la jornada 8</h3>
+              <p>Tras los reconocimientos médicos por su fractura en el dedo del pie, Paco ha estado 2 jornadas de baja y sufrió una recaída que le costó otra jornada más. Los médicos estiman que su lesión estará superada y podrá volver a jugar en la jornada 8.</p>
             </div>
           </div>
 
-          <div class="noticia-card">
+          <div class="noticia-card" data-fecha="2026-08-05">
             <div class="noticia-img">
               <span class="noticia-tag rojo">Sanción</span>
               <img src="img/noticias/sancion-alvaro-marin.jpg" alt="Sanción confirmada">
@@ -97,7 +97,7 @@
             </div>
           </div>
 
-          <div class="noticia-card">
+          <div class="noticia-card" data-fecha="2026-07-25">
             <div class="noticia-img">
               <span class="noticia-tag oro">Parte médico</span>
               <img src="img/noticias/lucas-lesion.png" alt="Lucas en la playa">
@@ -211,6 +211,23 @@
   const toggle = document.getElementById('menuToggle');
   const enlaces = document.getElementById('enlaces');
   toggle.addEventListener('click', () => enlaces.classList.toggle('abierto'));
+
+  (function ordenarNoticias() {
+    const columna = document.querySelector('.noticias-col');
+    const grid = document.querySelector('.noticias-grid-secundarias');
+    if (!columna || !grid) return;
+
+    const tarjetas = Array.from(columna.querySelectorAll('.noticia-card[data-fecha]'));
+    if (!tarjetas.length) return;
+
+    tarjetas.sort((a, b) => new Date(b.dataset.fecha) - new Date(a.dataset.fecha));
+
+    const [masReciente, ...resto] = tarjetas;
+    tarjetas.forEach(t => t.classList.remove('destacada'));
+    masReciente.classList.add('destacada');
+    columna.insertBefore(masReciente, grid);
+    resto.forEach(t => grid.appendChild(t));
+  })();
 </script>
 
 </body>
