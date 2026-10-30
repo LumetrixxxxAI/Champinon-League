@@ -1085,6 +1085,25 @@ section {
   background: rgba(63, 102, 255, 0.07);
 }
 
+.temporada-toggle .eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--verde-neon);
+  margin-bottom: 6px;
+}
+
+.temporada-toggle .eyebrow.dorado {
+  color: var(--oro-claro);
+  background: rgba(212, 175, 55, 0.14);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+}
+
 .temporada-toggle h3 {
   margin: 2px 0 0;
   font-size: 1.15rem;
