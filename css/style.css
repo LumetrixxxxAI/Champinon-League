@@ -1054,6 +1054,137 @@ section {
   font-size: 0.82rem;
 }
 
+/* ---------- Acordeón de temporadas (clasificación) ---------- */
+
+.temporadas-acordeon {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.temporada-bloque {
+  background: linear-gradient(155deg, var(--gris-oscuro), var(--negro));
+  border: 1px solid var(--gris-medio);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.temporada-toggle {
+  all: unset;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 20px 24px;
+  cursor: pointer;
+}
+
+.temporada-toggle:hover {
+  background: rgba(63, 102, 255, 0.07);
+}
+
+.temporada-toggle h3 {
+  margin: 2px 0 0;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.temporada-toggle .flecha {
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  color: var(--verde-neon);
+  transition: transform 0.25s ease;
+}
+
+.temporada-toggle.abierto .flecha {
+  transform: rotate(180deg);
+}
+
+.temporada-panel {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 24px;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.temporada-panel.abierto {
+  max-height: 6000px;
+  padding: 0 24px 28px;
+}
+
+.temporada-vacio {
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+  padding-bottom: 24px;
+}
+
+.temporada-intro {
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+.premios-seccion {
+  margin-top: 36px;
+}
+
+.premios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.premio-card {
+  background: linear-gradient(155deg, var(--negro), var(--gris-oscuro));
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: var(--radius);
+  padding: 26px 16px;
+  text-align: center;
+}
+
+.premio-icono {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.premio-estado {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.14);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: var(--oro-claro);
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.premio-card h4 {
+  margin: 0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 700px) {
+  .premios-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .temporada-toggle {
+    padding: 16px 18px;
+  }
+
+  .temporada-panel.abierto {
+    padding: 0 18px 22px;
+  }
+}
+
 /* ---------- Balón de Oro ---------- */
 
 .balon-hero {

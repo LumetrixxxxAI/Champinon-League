@@ -31,10 +31,10 @@
   <div class="contenedor">
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="hero-emoji">📊</div>
-    <h1>Clasificación de la <span class="destacado">Temporada 1</span></h1>
+    <h1>Clasificación de la <span class="destacado">Champiñón League</span></h1>
     <p class="subtitulo">
       Cada MVP de jornada suma un punto para la carrera del Balón de Oro.
-      Así va la tabla ahora mismo.
+      Despliega una temporada para ver su tabla y sus premios.
     </p>
   </div>
 </section>
@@ -43,13 +43,40 @@
   <div class="contenedor">
     <div class="titulo-seccion">
       <div>
-        <span class="eyebrow">Temporada 1 · Jornada 14 de 15</span>
-        <h2>Tabla de MVPs</h2>
+        <span class="eyebrow">Historial</span>
+        <h2>Temporadas</h2>
       </div>
-      <p>El líder al cierre de la jornada 15 se lleva el Balón de Oro de la temporada.</p>
+      <p>Despliega cada temporada para ver su clasificación y sus premios.</p>
     </div>
 
-    <div class="ranking-lista">
+    <div class="temporadas-acordeon">
+
+      <div class="temporada-bloque">
+        <button class="temporada-toggle" data-target="panel-t2" aria-expanded="false">
+          <div>
+            <span class="eyebrow">Próximamente</span>
+            <h3>Temporada 2</h3>
+          </div>
+          <span class="flecha">▾</span>
+        </button>
+        <div class="temporada-panel" id="panel-t2" hidden>
+          <p class="temporada-vacio">La Temporada 2 arrancará en cuanto se cierre el Balón de Oro de la Temporada 1. Vuelve por aquí cuando empiece.</p>
+        </div>
+      </div>
+
+      <div class="temporada-bloque">
+        <button class="temporada-toggle abierto" data-target="panel-t1" aria-expanded="true">
+          <div>
+            <span class="eyebrow">Jornada 14 de 15 · En curso</span>
+            <h3>Temporada 1</h3>
+          </div>
+          <span class="flecha">▾</span>
+        </button>
+        <div class="temporada-panel abierto" id="panel-t1">
+
+          <p class="temporada-intro">El líder al cierre de la jornada 15 se lleva el Balón de Oro de la temporada.</p>
+
+          <div class="ranking-lista">
 
       <div class="ranking-fila lider">
         <span class="ranking-num">1</span>
@@ -171,11 +198,42 @@
         <div class="ranking-mvp-wrap"><span class="ranking-mvp">0</span></div>
       </div>
 
-    </div>
+          </div>
 
-    <div class="leyenda">
-      <span>🥇 Líder de la temporada</span>
-      <span>El número de la derecha son los MVPs acumulados</span>
+          <div class="leyenda">
+            <span>🥇 Líder de la temporada</span>
+            <span>El número de la derecha son los MVPs acumulados</span>
+          </div>
+
+          <div class="premios-seccion">
+            <div class="titulo-seccion">
+              <div>
+                <span class="eyebrow">Al cierre de la temporada</span>
+                <h3>Premios de la Temporada 1</h3>
+              </div>
+            </div>
+            <div class="premios-grid">
+              <div class="premio-card">
+                <div class="premio-icono">🌟</div>
+                <span class="premio-estado">Por confirmar</span>
+                <h4>Jugador Revelación</h4>
+              </div>
+              <div class="premio-card">
+                <div class="premio-icono">🦵</div>
+                <span class="premio-estado">Por confirmar</span>
+                <h4>Mejor Patada de la Temporada</h4>
+              </div>
+              <div class="premio-card">
+                <div class="premio-icono">🥇</div>
+                <span class="premio-estado">Por confirmar</span>
+                <h4>Balón de Oro</h4>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -200,6 +258,17 @@
   const toggle = document.getElementById('menuToggle');
   const enlaces = document.getElementById('enlaces');
   toggle.addEventListener('click', () => enlaces.classList.toggle('abierto'));
+
+  document.querySelectorAll('.temporada-toggle').forEach((boton) => {
+    boton.addEventListener('click', () => {
+      const panel = document.getElementById(boton.dataset.target);
+      const abrir = !boton.classList.contains('abierto');
+      boton.classList.toggle('abierto', abrir);
+      boton.setAttribute('aria-expanded', abrir);
+      panel.classList.toggle('abierto', abrir);
+      panel.hidden = !abrir;
+    });
+  });
 </script>
 
 </body>
