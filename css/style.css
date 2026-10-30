@@ -977,7 +977,7 @@ section {
 
 .ranking-bandera {
   flex-shrink: 0;
-  width: 22px;
+  width: 15px;
   height: auto;
   border-radius: 2px;
   display: block;
@@ -1004,7 +1004,18 @@ section {
   flex-shrink: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  min-width: 92px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.ranking-fila.lider .ranking-mvp-wrap {
+  background: rgba(5, 7, 15, 0.15);
+  border-color: rgba(5, 7, 15, 0.25);
 }
 
 .ranking-trofeo {
@@ -1015,7 +1026,7 @@ section {
 .ranking-mvp {
   display: block;
   font-weight: 900;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: var(--oro);
   line-height: 1;
   min-width: 24px;
@@ -1288,11 +1299,16 @@ footer .foot-marca {
   }
 
   .ranking-bandera {
-    width: 18px;
+    width: 13px;
   }
 
   .ranking-nombre {
     font-size: 0.78rem;
+  }
+
+  .ranking-mvp-wrap {
+    min-width: 56px;
+    padding: 7px 12px;
   }
 
   .ranking-mvp {
