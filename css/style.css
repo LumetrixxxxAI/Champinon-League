@@ -568,6 +568,10 @@ section {
   object-fit: cover;
 }
 
+.noticia-img img[src*="ismael-fichaje-oficial"] {
+  object-position: center 12%;
+}
+
 .noticia-card.destacada .noticia-img {
   font-size: 3.4rem;
 }
@@ -977,7 +981,7 @@ section {
 
 .ranking-bandera {
   flex-shrink: 0;
-  width: 15px;
+  width: 18px;
   height: auto;
   border-radius: 2px;
   display: block;
