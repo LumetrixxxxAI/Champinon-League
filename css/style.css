@@ -1141,27 +1141,25 @@ section {
   background: linear-gradient(155deg, var(--negro), var(--gris-oscuro));
   border: 1px solid rgba(212, 175, 55, 0.25);
   border-radius: var(--radius);
-  padding: 26px 16px;
+  padding: 16px;
   text-align: center;
 }
 
-.premio-icono {
-  font-size: 2.4rem;
-  margin-bottom: 10px;
+.premio-foto {
+  aspect-ratio: 3 / 4;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  background: linear-gradient(155deg, var(--gris-oscuro), var(--negro));
+  border: 1.5px dashed rgba(212, 175, 55, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.premio-estado {
-  display: inline-block;
-  margin-bottom: 10px;
-  padding: 3px 10px;
-  border-radius: 999px;
-  background: rgba(212, 175, 55, 0.14);
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  color: var(--oro-claro);
-  font-size: 0.65rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+.premio-foto svg {
+  width: 30%;
+  height: 30%;
+  color: rgba(212, 175, 55, 0.5);
 }
 
 .premio-card h4 {
