@@ -1428,6 +1428,54 @@ footer .foot-marca {
   .decor-halloween.bl { font-size: 1.2rem; bottom: -6px; left: -6px; }
   .decor-halloween.br { font-size: 1.5rem; bottom: -8px; right: -8px; }
 
+  .jornadas-grid {
+    gap: 16px;
+  }
+
+  .jornada-card {
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .jornada-info {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .jornada-numero {
+    font-size: 0.68rem;
+    padding: 4px 10px;
+    margin-bottom: 10px;
+  }
+
+  .jornada-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+  }
+
+  .mvp-banner,
+  .lesion-banner {
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    gap: 8px;
+  }
+
+  .mvp-banner .texto strong,
+  .lesion-banner .texto strong {
+    font-size: 0.9rem;
+  }
+
+  .mvp-poster {
+    height: auto;
+    width: 120px;
+    align-self: flex-start;
+  }
+
+  .mvp-poster img {
+    width: 100%;
+    height: auto;
+  }
+
   .contenedor {
     padding: 0 16px;
   }
