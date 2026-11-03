@@ -16,6 +16,8 @@
   --blanco: #f5f7fc;
   --texto-suave: #9aa7cf;
   --rojo-tarjeta: #e63946;
+  --naranja: #ff7a1a;
+  --naranja-claro: #ffb366;
   --radius: 14px;
   --sombra: 0 10px 30px rgba(0, 0, 0, 0.45);
 }
@@ -357,6 +359,58 @@ section {
   transform: translateY(-4px);
   border-color: rgba(63, 102, 255, 0.5);
   box-shadow: 0 12px 30px rgba(63, 102, 255, 0.12);
+}
+
+.jornada-card.especial {
+  background: linear-gradient(155deg, rgba(255, 122, 26, 0.2), var(--gris-oscuro) 48%, var(--negro));
+  border-color: rgba(255, 150, 60, 0.4);
+}
+
+.jornada-card.especial:hover {
+  border-color: rgba(255, 150, 60, 0.65);
+  box-shadow: 0 12px 30px rgba(255, 122, 26, 0.18);
+}
+
+.jornada-card.especial .jornada-numero {
+  background: rgba(255, 122, 26, 0.2);
+  color: var(--naranja-claro);
+}
+
+.decor-halloween {
+  position: absolute;
+  line-height: 1;
+  font-size: 2rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
+  pointer-events: none;
+  z-index: 3;
+}
+
+.decor-halloween.tl {
+  top: -16px;
+  left: -14px;
+  font-size: 2.3rem;
+  transform: rotate(-15deg);
+}
+
+.decor-halloween.tr {
+  top: -14px;
+  right: -12px;
+  font-size: 1.9rem;
+  transform: rotate(12deg);
+}
+
+.decor-halloween.bl {
+  bottom: -12px;
+  left: -10px;
+  font-size: 1.7rem;
+  transform: rotate(10deg);
+}
+
+.decor-halloween.br {
+  bottom: -14px;
+  right: -14px;
+  font-size: 2.1rem;
+  transform: rotate(-10deg);
 }
 
 .jornada-info {
@@ -1368,6 +1422,11 @@ footer .foot-marca {
   html {
     font-size: 85%;
   }
+
+  .decor-halloween.tl { font-size: 1.6rem; top: -10px; left: -8px; }
+  .decor-halloween.tr { font-size: 1.3rem; top: -8px; right: -6px; }
+  .decor-halloween.bl { font-size: 1.2rem; bottom: -6px; left: -6px; }
+  .decor-halloween.br { font-size: 1.5rem; bottom: -8px; right: -8px; }
 
   .contenedor {
     padding: 0 16px;
