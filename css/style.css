@@ -1242,9 +1242,39 @@ section {
   letter-spacing: 0.02em;
 }
 
+.gala-card {
+  margin-top: 18px;
+  background: linear-gradient(155deg, var(--negro), var(--gris-oscuro));
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+}
+
+.gala-foto {
+  aspect-ratio: 21 / 9;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  background: linear-gradient(155deg, var(--gris-oscuro), var(--negro));
+  border: 1.5px dashed rgba(212, 175, 55, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gala-foto svg {
+  width: 14%;
+  height: 14%;
+  color: rgba(212, 175, 55, 0.5);
+}
+
 @media (max-width: 700px) {
   .premios-grid {
     grid-template-columns: 1fr;
+  }
+
+  .gala-foto {
+    aspect-ratio: 4 / 3;
   }
 
   .temporada-toggle {
@@ -1266,126 +1296,6 @@ section {
 .balon-hero .emoji-grande {
   font-size: 4rem;
   margin-bottom: 10px;
-}
-
-.temporada-actual-card {
-  max-width: 640px;
-  margin: 0 auto;
-  background: linear-gradient(155deg, rgba(212, 175, 55, 0.1), var(--gris-oscuro));
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  border-radius: var(--radius);
-  padding: 36px;
-  text-align: center;
-}
-
-.avatar-campeon {
-  width: 84px;
-  height: 84px;
-  border-radius: 50%;
-  border: 3px solid var(--oro);
-  overflow: hidden;
-  margin: 0 auto 16px;
-}
-
-.avatar-campeon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.temporada-actual-card .eyebrow {
-  color: var(--oro);
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 0.14em;
-  margin-bottom: 12px;
-  display: block;
-}
-
-.temporada-actual-card h3 {
-  font-size: 1.6rem;
-  margin-bottom: 6px;
-}
-
-.temporada-actual-card p {
-  color: var(--texto-suave);
-  font-size: 0.9rem;
-  margin-bottom: 20px;
-}
-
-.progreso-barra {
-  height: 8px;
-  background: var(--gris-medio);
-  border-radius: 999px;
-  overflow: hidden;
-  margin-bottom: 8px;
-}
-
-.progreso-barra .relleno {
-  height: 100%;
-  background: linear-gradient(90deg, var(--verde-neon), var(--oro));
-  border-radius: 999px;
-}
-
-.progreso-texto {
-  font-size: 0.8rem;
-  color: var(--texto-suave);
-}
-
-.historial-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
-
-.temporada-card {
-  background: var(--gris-oscuro);
-  border: 1px solid var(--gris-medio);
-  border-radius: var(--radius);
-  padding: 26px;
-  text-align: center;
-  position: relative;
-}
-
-.temporada-card.pendiente {
-  opacity: 0.55;
-  border-style: dashed;
-}
-
-.temporada-card.ganada {
-  border-color: rgba(212, 175, 55, 0.45);
-  background: linear-gradient(155deg, rgba(212, 175, 55, 0.12), var(--gris-oscuro));
-}
-
-.temporada-card.ganada .ganador {
-  color: var(--oro-claro);
-}
-
-.temporada-card .trofeo-grande {
-  font-size: 2.4rem;
-  margin-bottom: 10px;
-}
-
-.temporada-card .num-temporada {
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--verde-neon);
-  font-weight: 800;
-  margin-bottom: 8px;
-}
-
-.temporada-card .ganador {
-  font-size: 1.25rem;
-  font-weight: 800;
-  margin-bottom: 4px;
-}
-
-.temporada-card .detalle {
-  color: var(--texto-suave);
-  font-size: 0.85rem;
 }
 
 /* ---------- CTA / Footer ---------- */

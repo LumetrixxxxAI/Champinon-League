@@ -41,41 +41,77 @@
 
 <section>
   <div class="contenedor">
-    <div class="titulo-seccion" style="justify-content:center; text-align:center; flex-direction:column; align-items:center;">
-      <span class="eyebrow">Temporada 1 · Finalizada</span>
-      <h2>🏆 Campeón</h2>
-    </div>
-
-    <div class="temporada-actual-card ganada">
-      <div class="avatar-campeon"><img src="img/jugadores/montesinos.jpg" alt="Montesinos"></div>
-      <span class="eyebrow">Balón de Oro · Temporada 1</span>
-      <h3>🥇 Montesinos</h3>
-      <p>4 MVP conseguidos — Pablo Brenes, Fran, Juan Carlos y Jorge terminaron empatados con 3 cada uno.</p>
-      <div class="progreso-barra">
-        <div class="relleno" style="width:100%;"></div>
-      </div>
-      <div class="progreso-texto">15 de 15 jornadas jugadas</div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="contenedor">
     <div class="titulo-seccion">
       <div>
         <span class="eyebrow">Palmarés</span>
         <h2>Historial de temporadas</h2>
       </div>
-      <p>Aquí quedará escrita la leyenda de cada temporada de la Champiñón League.</p>
+      <p>Despliega cada temporada para ver sus premios y la foto de la gala.</p>
     </div>
 
-    <div class="historial-grid">
-      <div class="temporada-card ganada">
-        <div class="trofeo-grande">🏆</div>
-        <div class="num-temporada">Temporada 1</div>
-        <div class="ganador">Montesinos</div>
-        <div class="detalle">4 MVP acumulados</div>
+    <div class="temporadas-acordeon">
+
+      <div class="temporada-bloque">
+        <button class="temporada-toggle abierto" data-target="panel-palmares-t1" aria-expanded="true">
+          <div>
+            <span class="eyebrow dorado">🏆 Finalizada</span>
+            <h3>Temporada 1</h3>
+          </div>
+          <span class="flecha">▾</span>
+        </button>
+        <div class="temporada-panel abierto" id="panel-palmares-t1">
+
+          <div class="premios-grid">
+            <div class="premio-card">
+              <div class="premio-foto">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.4"/>
+                  <circle cx="8" cy="10" r="1.8" stroke="currentColor" stroke-width="1.4"/>
+                  <path d="M3 17l5.5-5.5a1.8 1.8 0 0 1 2.5 0L17 17" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M13.5 14.5l2-2a1.8 1.8 0 0 1 2.5 0L21 15.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h4>Jugador Revelación</h4>
+            </div>
+            <div class="premio-card">
+              <div class="premio-foto">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.4"/>
+                  <circle cx="8" cy="10" r="1.8" stroke="currentColor" stroke-width="1.4"/>
+                  <path d="M3 17l5.5-5.5a1.8 1.8 0 0 1 2.5 0L17 17" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M13.5 14.5l2-2a1.8 1.8 0 0 1 2.5 0L21 15.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h4>Mejor Patada de la Temporada</h4>
+            </div>
+            <div class="premio-card">
+              <div class="premio-foto">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.4"/>
+                  <circle cx="8" cy="10" r="1.8" stroke="currentColor" stroke-width="1.4"/>
+                  <path d="M3 17l5.5-5.5a1.8 1.8 0 0 1 2.5 0L17 17" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M13.5 14.5l2-2a1.8 1.8 0 0 1 2.5 0L21 15.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h4>Balón de Oro</h4>
+            </div>
+          </div>
+
+          <div class="gala-card">
+            <div class="gala-foto">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.4"/>
+                <circle cx="8" cy="10" r="1.8" stroke="currentColor" stroke-width="1.4"/>
+                <path d="M3 17l5.5-5.5a1.8 1.8 0 0 1 2.5 0L17 17" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M13.5 14.5l2-2a1.8 1.8 0 0 1 2.5 0L21 15.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h4>Foto de la Gala Carniceros</h4>
+          </div>
+
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -100,6 +136,17 @@
   const toggle = document.getElementById('menuToggle');
   const enlaces = document.getElementById('enlaces');
   toggle.addEventListener('click', () => enlaces.classList.toggle('abierto'));
+
+  document.querySelectorAll('.temporada-toggle').forEach((boton) => {
+    boton.addEventListener('click', () => {
+      const panel = document.getElementById(boton.dataset.target);
+      const abrir = !boton.classList.contains('abierto');
+      boton.classList.toggle('abierto', abrir);
+      boton.setAttribute('aria-expanded', abrir);
+      panel.classList.toggle('abierto', abrir);
+      panel.hidden = !abrir;
+    });
+  });
 </script>
 
 </body>
