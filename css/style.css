@@ -1278,6 +1278,22 @@ section {
   text-align: center;
 }
 
+.avatar-campeon {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  border: 3px solid var(--oro);
+  overflow: hidden;
+  margin: 0 auto 16px;
+}
+
+.avatar-campeon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .temporada-actual-card .eyebrow {
   color: var(--oro);
   font-weight: 800;
@@ -1336,6 +1352,15 @@ section {
 .temporada-card.pendiente {
   opacity: 0.55;
   border-style: dashed;
+}
+
+.temporada-card.ganada {
+  border-color: rgba(212, 175, 55, 0.45);
+  background: linear-gradient(155deg, rgba(212, 175, 55, 0.12), var(--gris-oscuro));
+}
+
+.temporada-card.ganada .ganador {
+  color: var(--oro-claro);
 }
 
 .temporada-card .trofeo-grande {
